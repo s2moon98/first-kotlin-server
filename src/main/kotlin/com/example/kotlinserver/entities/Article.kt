@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.ManyToOne
 
+import com.example.kotlinserver.extensions.toSlug
+
 @Entity
 class Article(
     var title: String,
@@ -13,5 +15,6 @@ class Article(
     var content: String,
     @ManyToOne var autor: User,
     var addedAt: LocalDateTime = LocalDateTime.now(),
-    @Id @GeneratedValue var id: Long? = null
+    @Id @GeneratedValue var id: Long? = null,
+    var slug: String = title.toSlug()
 )
