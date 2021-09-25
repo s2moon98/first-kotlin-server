@@ -22,7 +22,7 @@ class RepositoriesTests @Autowired constructor(
         val newUser = User("s2moon98", "jieun", "moon")
         entityManager.persist(newUser)
 
-        var newArticle = Article("new article title", "new headline", "new content", newUser)
+        val newArticle = Article("new article title", "new headline", "new content", newUser)
         entityManager.persist(newArticle)
 
         entityManager.flush()
